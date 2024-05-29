@@ -1,8 +1,0 @@
-streamlit
-pandas
-streamlit_option_menu
-plotly.graph_objects
-sklearn.compose
-sklearn.pipeline
-sklearn.linear_model
-sklearn.preprocessing
