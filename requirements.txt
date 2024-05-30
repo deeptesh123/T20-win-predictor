@@ -2,7 +2,4 @@ streamlit
 pandas
 streamlit-option-menu
 plotly
-sklearn.compose
-sklearn.pipeline
-sklearn.linear_model
-sklearn.preprocessing
+sklearn
