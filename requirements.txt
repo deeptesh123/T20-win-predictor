@@ -1,7 +1,7 @@
 streamlit
 pandas
 streamlit-option-menu
-plotly.graph_objects
+plotly
 sklearn.compose
 sklearn.pipeline
 sklearn.linear_model
