@@ -87,14 +87,16 @@ def match_progression(match):
         probabilities=st.session_state.pipe.predict_proba(x)[0]
         win.append(round(probabilities[1]*100))
         lose.append(round(probabilities[0]*100))
-    over_prog["chasing team win"]=win
-    over_prog["chasing team lose"]=lose    
+    Overs=[i for i in range(1,len(overs_df)+1)]
+    overs_df["overs"]=Overs
+    overs_df["chasing team win"]=win
+    overs_df["chasing team lose"]=lose    
     fig_bar=px.bar(over_prog,x="Over",y="Runs From Ball")
     fig_wickets=px.line(over_prog,x="Over",y="wickets",markers=True)
     fig_wickets.update_traces(marker=dict(size=7,color="yellow"),line=dict(color="yellow",width=3))
-    fig_win=px.line(over_prog,x="Over",y="chasing team win")
+    fig_win=px.line(overs_df,x="overs",y="chasing team win")
     fig_win.update_traces(line=dict(color="green",width=3))
-    fig_lose=px.line(over_prog,x="Over",y="chasing team lose")
+    fig_lose=px.line(overs_df,x="overs",y="chasing team lose")
     fig_lose.update_traces(line=dict(color="red",width=3))
     fig_wickets=fig_wickets.add_trace(fig_bar.data[0])
     fig_wickets=fig_wickets.add_traces(fig_win.data[0])
